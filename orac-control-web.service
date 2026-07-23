@@ -1,14 +1,14 @@
 [Unit]
 Description=Orac Control Service
-After=mec.service
-Requires=mec.service
+After=mec.service orac.service
+Requires=mec.service orac.service
 
 [Service]
 User=patch
 Environment=HOME=/home/patch
 Restart=always
 WorkingDirectory=/usr/local/orac-control-web/backend
-ExecStart=/usr/bin/python3 ./main.py
+ExecStart=/usr/local/orac-control-web/backend/.venv/bin/python ./main.py
 
 [Install]
 WantedBy=multi-user.target

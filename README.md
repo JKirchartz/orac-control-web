@@ -2,14 +2,14 @@
 
 Web client for the ORAC [synth](https://github.com/TheTechnobear/Orac) to be run on the Raspberry PI. Installation tested and designed to work out of the box on the [Patchbox OS](https://blokas.io/patchbox-os/). Web client also includes UDP OSC <-> Socket.IO bridge and simple static file server. It runs on the rPi, next to the ORAC, so all you need is a web browser essentially. Application is designed to be mobile-friendly.
 
-![screenshot](https://raw.githubusercontent.com/dsedleckas/orac-control-web/master/screenshot.png) 
+![screenshot](https://raw.githubusercontent.com/JKirchartz/orac-control-web/master/screenshot.png) 
 
 ## Install instructions
 Currently tested on [**Patchbox OS**](https://blokas.io/patchbox-os/). Application depends on `git`, `python3` (3.5, should work with 3.6, not sure about 3.7) and `pip3`. Install script will check if `git` is installed, but you need to manually verify that `python3` and `pip3` are available (`pip3 --version` and `python3 --version`). Install the missing dependencies through your package manager, e.g. `sudo apt-get install python3-pip`.
 
 SSH to your Pi and run:
 ```sh
-curl https://raw.githubusercontent.com/dsedleckas/orac-control-web/master/install-orac-control-web.sh | sh
+curl https://raw.githubusercontent.com/JKirchartz/orac-control-web/master/install-orac-control-web.sh | sh
 ```
 Open `http://<rpi-ip-address>:8080`
 If you're stuck on loading screen, make sure ORAC module is activated and `mec.service` is running. If not, run `patchbox module config`. Any suggestions/comments/bug reports are welcome here, or on the Blokas [community board](https://community.blokas.io/t/web-client-for-orac-2-0/1186).
