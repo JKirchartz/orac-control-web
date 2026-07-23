@@ -26,16 +26,16 @@ else
 fi
 
 echo "Setup started..."
-sudo rm -rf $APP_DIR
-sudo mkdir -p $APP_DIR/client $APP_DIR/backend
-sudo cp -R "$WORK_DIR/client/." $APP_DIR/client
-sudo cp -R "$WORK_DIR/backend/." $APP_DIR/backend
-cd $APP_DIR/backend
+cd $WORK_DIR/backend
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 deactivate
+sudo rm -rf $APP_DIR
+sudo mkdir -p $APP_DIR/client $APP_DIR/backend
+sudo cp -R "$WORK_DIR/client/." $APP_DIR/client
+sudo cp -R "$WORK_DIR/backend/." $APP_DIR/backend
 cd $REPO_NAME
 sudo install -v -m 644 "$WORK_DIR/orac-control-web.service" /usr/lib/systemd/system/
 sudo systemctl daemon-reload
