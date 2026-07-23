@@ -26,8 +26,13 @@ else
 fi
 
 echo "Setup started..."
+sudo apt install add-apt-repository
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.7 python3.7-venv
+
 cd $WORK_DIR/backend
-python3 -m venv .venv
+python3.7 -m venv .venv
 . .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
